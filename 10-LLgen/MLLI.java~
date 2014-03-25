@@ -1,0 +1,15 @@
+import java.util.Iterator;
+
+public class MLLI<E> implements Iterator<E>{
+    private Node<E> currentNode;
+    public MyLinkedList<E>(Node<E> n){
+	currentNode = n;
+    }
+    public boolean hasNext(){
+	return currentNode.getNext() == null;
+    }
+    public E next(){
+	return currentNode.getNext();
+    }
+    public void remove(){}
+}
