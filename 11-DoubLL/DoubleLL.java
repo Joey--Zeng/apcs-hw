@@ -1,3 +1,5 @@
+//Joey Zeng,     Jerry Dai
+
 public class DoubleLL<E>{
     private class Node<E>{
 	E data;
