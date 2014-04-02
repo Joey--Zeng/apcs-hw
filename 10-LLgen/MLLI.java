@@ -6,7 +6,7 @@ public class MLLI<E> implements Iterator<E>{
 	currentNode = n;
     }
     public boolean hasNext(){
-	return currentNode.getNext() == null;
+	return currentNode.getNext() != null;
     }
     public E next(){
 	E next = currentNode.getData();
