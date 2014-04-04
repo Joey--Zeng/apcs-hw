@@ -98,13 +98,22 @@ public class MyLinkedList<E> implements Iterable{
     
     public static void main (String[] args){
 	MyLinkedList<String> asd = new MyLinkedList<String>();
+	Iterator<String> it = asd.iterator();
+
+	
 	asd.add("Joey");
 	asd.add("Joey1");
 	asd.add("Joey2");
 	asd.add("Joey3");
 	asd.add("Joey4");
 	asd.add("Joey5");
-
+	
+	System.out.println(it.hasNext());	
+	while (it.hasNext()){	       
+		System.out.println(it.next());
+	}
+	
+	/*
 	System.out.println(asd);
 	
 	asd.add(0,"head");
@@ -116,6 +125,7 @@ public class MyLinkedList<E> implements Iterable{
 	System.out.println(asd.remove(5));
 
 	System.out.println(asd);
+	*/
     }
     
 }

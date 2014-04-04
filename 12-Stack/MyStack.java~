@@ -1,0 +1,35 @@
+
+
+public class MyStack{
+    
+    private Node top;
+    
+    public MyStack(){
+	
+    }
+
+    public void push(String s){
+	Node a = new Node(s);
+	a.setNext(top);
+	top = a;
+    }
+
+    public boolean isEmpty(){
+	return top==null;
+    }
+    public String pop(){
+	Node aaa = top;
+	top = top.getNext;
+	return aaa;
+    }
+    
+
+
+    public static void main(String[] args){
+	MyStack a = new MyStack();
+	a.push("asdasda");
+	a.push("194");
+	a.push("213152");
+
+    }
+}
