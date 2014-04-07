@@ -2,34 +2,39 @@
 
 public class MyStack{
     
-    private Node top;
+    private String[] a;
+    int i;
     
     public MyStack(){
-	
+	a = new String[10];
+	i=-1;
     }
 
     public void push(String s){
-	Node a = new Node(s);
-	a.setNext(top);
-	top = a;
+	if (i+1 >= a.length){
+	    String[] aa = new String[2*a.length];
+	    for(int b = 0; b < a.length; b++)
+		aa[b] = a[b];
+	    a = aa;
+	}
+	a[++i] = s;
     }
-
+    
     public boolean isEmpty(){
-	return top==null;
+	return i==0;
     }
-
+    
     public String pop(){
-	Node aaa = top;
-	top = top.getNext();
-	return aaa.getData();
+	String asd = a[i];
+        a[i--] = null;
+	return asd;
     }
 
     public String toString(){
 	String s = "";
-	Node tmp = top;
-	while(tmp!=null){
-	    s = s + tmp.getData() + ", ";
-	    tmp = tmp.getNext();
+
+	for(int z = 0; z < i; z++){
+	    s = s + a[i-z-1] + ", ";	 
 	}
 	return s.substring(0,s.length()-2);
     }
@@ -39,6 +44,15 @@ public class MyStack{
 	MyStack a = new MyStack();
 	a.push("asdasda");
 	a.push("194");
+	a.push("213152");
+	a.push("213152");
+	a.push("213152");
+	a.push("213152");
+	a.push("213152");
+	a.push("213152");
+	a.push("213152");
+	a.push("213152");
+	a.push("213152");
 	a.push("213152");
 	System.out.println(a);
 	System.out.println(a.pop());
