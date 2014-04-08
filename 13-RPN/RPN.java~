@@ -3,7 +3,10 @@ public class RPN{
     private static final String asdasd = "+-/*^";
     
     public RPN(){
-	asd = new MyStack;
+	asd = new MyStack();
     }
     
-    
+    public int calc(String a){
+	for(
+	
+    }
