@@ -1,16 +1,20 @@
-
+import java.util.StringTokenizer; 
 
 public class RPN{
     private MyStack asd;
     private static final String asdasd = "+-*/^";
-    
+
+
     public RPN(){
 	asd = new MyStack();
     }
     
     public int calc(String a){
-	for(int i = 0; i < a.length(); i++){
-	    String p = a.substring(i,i+1);
+ 	asd = new MyStack();
+	StringTokenizer str = new StringTokenizer(a);
+	
+	while(str.hasMoreElements()){	    	
+	    String p = (String)(str.nextElement());
 	    int x = asdasd.indexOf(p);
 	    if(x == -1)
 		asd.push(Integer.parseInt(p));
@@ -33,10 +37,13 @@ public class RPN{
 
     public static void main(String[] args){
 	RPN qwer = new RPN();
-	System.out.println(qwer.calc("34-"));
-	System.out.println(qwer.calc("34-1+"));
-	System.out.println(qwer.calc("34*"));
-	System.out.println(qwer.calc("34/"));
-	System.out.println(qwer.calc("34^"));
+	/*
+	System.out.println(qwer.calc("3 4 -"));
+	System.out.println(qwer.calc("3 4 - 1 +"));
+	System.out.println(qwer.calc("3 4 *"));
+	System.out.println(qwer.calc("3 4 /"));
+	System.out.println(qwer.calc("3 4 ^"));
+	*/
+	System.out.println(qwer.calc(args[0]));
     }
 }
