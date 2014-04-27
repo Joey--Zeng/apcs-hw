@@ -1,0 +1,74 @@
+
+public class BST {
+    private Node root;
+    
+    public BST() {
+        root = null;
+    }
+
+    public void insert(int a){
+	Node back;
+	Node piggy = root;
+	boolean leftFalse;
+	while(piggy != null){
+	    if (piggy.getData() < a){
+		back = piggy;
+		piggy = piggy.getRight();
+		leftFalse = true;
+	      
+	    }
+	    else{
+	        back = piggy;
+		piggy = piggy.getLeft();
+		leftFalse = false;
+	    }
+	}
+	if(leftFalse)
+	    back.setRight(new Node(a));
+	else
+	    back.setLeft(new Node(a));
+    }
+    
+	
+
+		
+    public Node search(int a){
+	Node asd = root;
+	while (asd.getData() != a){
+	    if (asd.getData() < a){
+		if (asd.getRight() == null)
+		    return null;
+		asd = a.getRight();
+	    }
+	    
+	    else if (asd.getData() > a){
+		if (asd.getLeft() == null)
+		    return null;
+		asd = a.getLeft();
+		
+	    }
+	}
+	return asd;
+    }
+
+    public String toString(){
+	return ""+data;
+    }
+    
+    public static void main(String[] args){
+	BST a = new BST();
+	a.insert(10);
+	a.insert(8);
+	a.insert(3);
+	a.insert(7);
+	a.insert(19);
+	a.insert(14);
+	a.insert(6);
+	a.insert(2);
+	a.insert(15);
+	a.insert(12);
+	
+	System.out.println(a.search(10));
+    }
+       
+}
