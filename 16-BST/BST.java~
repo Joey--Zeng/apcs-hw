@@ -6,10 +6,18 @@ public class BST {
         root = null;
     }
 
+    public Node getRoot(){
+	return root;
+    }
+
     public void insert(int a){
-	Node back;
+	Node back = new Node(0);
 	Node piggy = root;
-	boolean leftFalse;
+	boolean leftFalse = false;
+	if (piggy == null){
+	    root = new Node(a);
+	    return;
+	}
 	while(piggy != null){
 	    if (piggy.getData() < a){
 		back = piggy;
@@ -38,22 +46,33 @@ public class BST {
 	    if (asd.getData() < a){
 		if (asd.getRight() == null)
 		    return null;
-		asd = a.getRight();
+		asd = asd.getRight();
 	    }
 	    
 	    else if (asd.getData() > a){
 		if (asd.getLeft() == null)
 		    return null;
-		asd = a.getLeft();
+		asd = asd.getLeft();
 		
 	    }
 	}
 	return asd;
     }
 
-    public String toString(){
-	return ""+data;
+    public Node search2(Node n, int a){
+	if(n == null || n.getData() == a){
+	    return n;
+	}
+	else{
+	    if (n.getData() < a){
+		return search2(n.getRight(),a);
+	    }
+	    else
+		return search2(n.getLeft(),a);
+	}
     }
+
+
     
     public static void main(String[] args){
 	BST a = new BST();
@@ -68,7 +87,15 @@ public class BST {
 	a.insert(15);
 	a.insert(12);
 	
-	System.out.println(a.search(10));
+	System.out.println(a.search2(a.getRoot(),10));
+	System.out.println(a.search2(a.getRoot(),8));
+	System.out.println(a.search2(a.getRoot(),3));
+	System.out.println(a.search2(a.getRoot(),7));
+	System.out.println(a.search2(a.getRoot(),19));
+	System.out.println(a.search2(a.getRoot(),14));
+	System.out.println(a.search2(a.getRoot(),6));
+	System.out.println(a.search2(a.getRoot(),2));
+	System.out.println(a.search2(a.getRoot(),1));
     }
        
 }

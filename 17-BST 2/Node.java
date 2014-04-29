@@ -18,16 +18,20 @@ public class Node {
 	return left;
     }
 
-    public void setLeft(int a){
+    public void setLeft(Node a){
 	left = a;
     }
 
-    public int getRight(){
+    public Node getRight(){
 	return right;
     }
 
-    public void setRight(int a){
+    public void setRight(Node a){
         right = a;
+    }
+    
+    public String toString(){
+	return ""+data;
     }
 	
     // write all necessary constructors and get/set methods
