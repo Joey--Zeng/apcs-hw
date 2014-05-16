@@ -1,0 +1,11 @@
+
+
+public class Median{
+    private PriorityQueue<Integer> max;
+    private PriorityQueue<Integer> min;
+
+    public Median(){
+	max = new PriorityQueue<Integer>(11, new MaxHeap<Integer>());
+	min = new PriorityQueue<Integer>(11, new MinHeap<Integer>());
+
+}
